@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/teco
+    username: teco
+    password: 123
+
+javafx:
+    title: Teco
+    stage:
+        resizable: true

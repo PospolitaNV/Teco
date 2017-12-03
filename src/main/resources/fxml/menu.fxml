@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.npospolita.controllers.MenuController">
+   <children>
+      <SplitPane dividerPositions="0.25" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox prefHeight="398.0" prefWidth="147.0">
+                     <children>
+                        <Label onMouseClicked="#notesClicked" prefHeight="55.0" prefWidth="150.0" text="Notes" />
+                        <Label onMouseClicked="#settingsClicked" prefHeight="66.0" prefWidth="147.0" text="Settings" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="444.0">
+               <children>
+                  <AnchorPane fx:id="settings" prefHeight="400.0" prefWidth="452.0">
+                     <children>
+                        <GridPane prefHeight="398.0" prefWidth="445.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="101.0" prefWidth="225.0" text="Clear all notes" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="101.0" prefWidth="225.0" text="Change color" GridPane.rowIndex="1" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="101.0" prefWidth="225.0" text="Dark theme" GridPane.rowIndex="2" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="101.0" prefWidth="225.0" text="Music volume" GridPane.rowIndex="3" />
+                              <Slider fx:id="slider" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ToggleButton fx:id="themeToggle" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="228.0" text="switch" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <ColorPicker fx:id="colorPicker" prefHeight="25.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="clearNotesButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="225.0" text="Clear" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="notes" prefHeight="400.0" prefWidth="452.0" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
