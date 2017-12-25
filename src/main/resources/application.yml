@@ -3,10 +3,12 @@ spring:
     hibernate:
       ddl-auto: update
 
-  datasource:
-    url: jdbc:postgresql://localhost:5432/teco
-    username: teco
-    password: 123
+# Datasource
+spring.datasource:
+  url: jdbc:h2:file:~/test
+  username: sa
+  password:
+  driver-class-name: "org.h2.Driver"
 
 javafx:
     title: Teco
