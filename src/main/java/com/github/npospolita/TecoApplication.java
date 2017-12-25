@@ -6,7 +6,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
@@ -41,8 +42,18 @@ public class TecoApplication extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
         TecoApplication.primaryStage = primaryStage;
+        primaryStage.setResizable(false);
 		primaryStage.setScene(new Scene(rootNode));
 		primaryStage.show();
+	}
+
+	@Bean
+	public MediaPlayer musicPlayer() {
+		Media media = new Media(getClass().getResource("/music/tecoSoundtrack.mp3").toString()); //replace /Movies/test.mp3 with your file
+		MediaPlayer player = new MediaPlayer(media);
+		player.play();
+		player.setVolume(0.0);
+		return player;
 	}
 
 	@Bean
@@ -52,16 +63,25 @@ public class TecoApplication extends Application {
 			user.setLogin("tester");
 			user.setPassword("tester");
 			userRepository.save(user);
+			User user1 = new User();
+			user.setLogin("admin");
+			user.setPassword("admin");
+			userRepository.save(user);
+			User user2 = new User();
+			user.setLogin("user");
+			user.setPassword("user");
+			userRepository.save(user);
 		};
 	}
 
 	@Bean
-	public User currentUser() {
-		return new User();
+	public UserDetails currentUserDetails() {
+		return new UserDetails();
 	}
 
 	@Bean
 	public ExecutorService executorService() {
 		return Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*2);
 	}
+
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="notesPane" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.npospolita.controllers.NotesController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="452.0">
+         <children>
+            <HBox prefHeight="28.0" prefWidth="452.0">
+               <children>
+                  <Button fx:id="createNoteButton" mnemonicParsing="false" onAction="#createNoteButtonPressed" text="Create new note">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="editNoteButton" disable="true" mnemonicParsing="false" onAction="#editNoteButtonPressed" text="Edit note">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="deleteNoteButton" disable="true" mnemonicParsing="false" onAction="#deleteNoteButtonPressed" text="Delete note">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="376.0" prefWidth="442.0">
+               <children>
+                  <ScrollPane prefHeight="369.0" prefWidth="442.0">
+                     <content>
+                        <ListView fx:id="notesList" editable="true" onMouseClicked="#notesListClicked" prefHeight="577.0" prefWidth="426.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

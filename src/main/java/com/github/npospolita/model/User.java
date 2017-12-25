@@ -3,6 +3,8 @@ package com.github.npospolita.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 /**
  * User entity
@@ -18,6 +20,17 @@ public class User {
 
     @Column(nullable = false)
     String password;
+
+    @OneToMany
+    Set<Note> notes;
+
+    public Set<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(Set<Note> notes) {
+        this.notes = notes;
+    }
 
     @Override
     public String toString() {
