@@ -1,0 +1,2 @@
+# Teco
+Запуск - "gradlew bootRun"
